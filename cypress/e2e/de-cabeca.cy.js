@@ -9,7 +9,7 @@ describe('De Cabeça - Sua Calculadora Online', () => {
 
   it('preenchimento de formulários de Fahrenheit para Celsius', () => {
     cy.get('#fahrenInput').type('15')
-    cy.get('input[type="button"][onclick="FahrenPara()"]').click({force: true})
+    cy.get('#fahrenPara').click()
     cy.get('#celsiusOutput').should('be.visible')
   })
 })
