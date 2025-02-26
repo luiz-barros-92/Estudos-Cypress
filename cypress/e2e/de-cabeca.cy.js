@@ -18,7 +18,9 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.get('#celsius').type('abc')
     cy.get('#celsiusPara').click()
 
-    cy.window().its('alert').should('have.been.called')
+    cy.on('window:alert', (str) => {
+      expect(str).to.equal('Por favor, insira apenas valores numéricos!')
+    })
   })
 
   it('preenchimento de formulários de Fahrenheit para Celsius', () => {
