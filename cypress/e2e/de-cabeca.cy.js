@@ -24,6 +24,14 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     })
   })
 
+  it('preenchimento de formulário de somar porcentagem a um valor', () => {
+    cy.get('#porc3').type('100')
+    cy.get('#porc4').type('10')
+    cy.get('#calcularPorc2').click()
+
+    cy.get('#outPorc2').should('be.visible').and('have.text', '110,00')
+  })
+
   it('preenchimento de formulários de Celsius para Fahrenheit', () => {
     cy.get('#celsius').type('-9.44', {delay: 0})
     cy.get('#celsiusPara').click()
