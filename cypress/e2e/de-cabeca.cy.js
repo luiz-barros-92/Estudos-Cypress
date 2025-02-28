@@ -70,6 +70,13 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.on('window:alert', (str) => {
       expect(str).to.equal('Por favor, insira apenas valores numéricos!')
     })
+
+    cy.get('#porc6').type('abc')
+    cy.get('#calcularPorc3').click()
+
+    cy.on('window:alert', (str) => {
+      expect(str).to.equal('Por favor, insira apenas valores numéricos!')
+    })
   })
 
   it('preenchimento de formulários de Celsius para Fahrenheit', () => {
