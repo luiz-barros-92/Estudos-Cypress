@@ -77,4 +77,14 @@ describe('De Cabeça - Sua Calculadora Online', () => {
 
     cy.get('#celsiusOutput').should('be.visible').and('have.text', '-9,44 °C')
   })
+
+  it('capturando o alerta ao preencher input com caracteres de Fahrenheit não aceitos pela aplicação', () => {
+    cy.get('#fahrenInput').type('abc')
+    cy.get('#fahrenPara').click()
+  
+    cy.on('window:alert', (str) => {
+      expect(str).to.equal('Por favor, insira apenas valores numéricos!')
+    })
+  })
 })
+
