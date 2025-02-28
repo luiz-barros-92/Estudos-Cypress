@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
+    <title>De Cabeça - Sua Calculadora Online</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html"><img src="src/img/calc.png" alt="calculadora" id="icone"></a></li>
+            <li><a href="#porcentagem" data-offset="150">Porcentagem</a></li>
+            <li><a href="#geometria" data-offset="150">Geometria</a></li>
+            <li><a href="#regraTres" data-offset="150">Regra de Três</a></li>
+            <li><a href="#conversores" data-offset="150">Conversores</a></li>
+        </ul>
+    </nav>
+    <main>
+    <h1 id="titulo">De Cabeça <small>- Sua Calculadora Online</small></h1>
+        <section class="posts">
+            <h2 id="porcentagem">Porcentagem</h2>
+            <article>                
+                <input type="number" name="porc1" id="porc1"> &nbsp;<b>% de</b>&nbsp;<input type="number" name="porc2" id="porc2">&emsp; <input type="button" id="calcularPorc1" value="=" onclick="calcularPorc1()">&emsp;<output id="outPorc1"></output>
+                <hr><br>
+                <input type="number" name="porc3" id="porc3"> &emsp;<b>+</b>&emsp;<input type="number" name="porc4" id="porc4"> <b>%</b> &nbsp;<input type="button" id="calcularPorc2" value="=" onclick="calcularPorc2()">&emsp;<output id="outPorc2"></output>
+                <hr><br>
+                <input type="number" name="porc5" id="porc5"> &emsp;<b>−</b>&emsp;<input type="number" name="porc6" id="porc6"> <b>%</b> &nbsp;<input type="button" id="calcularPorc3" value="=" onclick="calcularPorc3()">&emsp;<output id="outPorc3"></output>
+                </article>                         
+            <h2 id="geometria">Geometria</h2>
+            <article>
+                <h3>Cálculo com Raio</h3>
+                <input type="number" name="Raio" id="raio" placeholder="Raio"> 
+                <select id="unidade" name="unidade"><option value="mm">mm</option><option value="cm">cm</option><option value="m">m</option><option value="km">Km</option></select>
+                <button id="calcularRaio" onclick="calcularRaio()">Calcular</button>
+                <p>Diâmetro <output id="outResultado1"></output>&nbsp;<output id="outUnidade1"></output></p>
+                <p>Circunferência <output id="outResultado2"></output>&nbsp;<output id="outUnidade2"></output></p>
+                <p>Área do Circulo <output id="outResultado3"></output>&nbsp;<output id="outUnidade3"></output></p>
+                <p>Área da Esfera <output id="outResultado4"></output>&nbsp;<output id="outUnidade4"></output></p>
+                <p>Volume da Esfera <output id="outResultado5"></output>&nbsp;<output id="outUnidade5"></output></p>
+            </article>
+            <h2 id="regraTres">Regra de Três</h2>
+            <article>
+                <h3>Regra de Três Simples</h3>
+                <br>
+                <input type="number" name="a3" id="a3" placeholder="A">
+                &emsp;&#10230;&emsp;
+                <input type="number" name="b3" id="b3" placeholder="B">  
+                <br>    
+                <span id="igual">=</span>
+                <br><br>            
+                <input type="number" name="c3" id="c3" placeholder="C">
+                &emsp;&#10230;&emsp;
+                &emsp;<output id="out3Simp">X</output>
+                <br>
+                <button id="regra3Simp" onclick="regra3Simp()">Calcular</button>
+            </article>
+            <h2 id="conversores">Conversores</h2>
+            <article>
+                <h3>Conversor de Unidades</h3>
+                <i><p>Km &#10230; Milhas</p></i>
+                <input type="number" name="km" id="km" placeholder="Km"> Km &emsp;
+                <input type="button" id="kmParaMilha" value="=" onclick="kmParaMilha()">
+                &emsp;<output id="milha"></output>
+                <hr>
+                <i><p>Milhas &#10230; Km</p></i>
+                <input type="number" name="milha" id="milhaIn" placeholder="Milhas"> Milhas
+                <input type="button" id="milhaParaKm" value="=" onclick="milhaParaKm()">
+                &emsp;<output id="quilometro"></output>
+                <hr>
+                <i><p>Celsius &#10230; Fahrenheit</p></i>
+                <input type="number" name="celsius" id="celsius" placeholder="°C"> °C &emsp;
+                <input type="button" id="celsiusPara" value="=" onclick="celsiusPara()">                
+                &emsp;<output id="fahren"></output>
+                <hr>
+                <i><p>Fahrenheit &#10230; Celsius</p></i>
+                <input type="number" name="fahren" id="fahrenInput" placeholder="°F"> °F &emsp;
+                <input type="button" id="fahrenPara" value="=" onclick="fahrenPara()">
+                &emsp;<output id="celsiusOutput"></output>
+            </article>
+    </section>
+    </main>
+    <footer>
+        <p id="rodape"><span id="ano"></span> LuizBarros &emsp;<a href="https://github.com/luiz-barros-92" target="_blank" rel="external">GitHub</a>&emsp;<a href="https://www.linkedin.com/in/luiz-barros-2ba4b7342" target="_blank" rel="external">LinkedIn</a></p>
+    </footer>
+    <script src="src/script.js"></script>
+</body>
+</html>

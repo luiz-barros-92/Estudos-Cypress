@@ -1,6 +1,6 @@
 describe('De Cabeça - Sua Calculadora Online', () => {
   beforeEach(() => {
-    cy.visit('https://luiz-barros-92.github.io/de-cabeca/')
+    cy.visit('./de-cabeca/index.html')
   })
 
   it('verificar o titulo', () => {    
