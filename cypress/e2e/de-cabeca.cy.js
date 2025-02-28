@@ -22,6 +22,13 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.on('window:alert', (str) => {
       expect(str).to.equal('Por favor, insira apenas valores numéricos!')
     })
+
+    cy.get('#porc2').type('abc')
+    cy.get('#calcularPorc1').click()
+
+    cy.on('window:alert', (str) => {
+      expect(str).to.equal('Por favor, insira apenas valores numéricos!')
+    })
   })
 
   it('preenchimento de formulário de somar porcentagem a um valor', () => {
@@ -34,6 +41,13 @@ describe('De Cabeça - Sua Calculadora Online', () => {
 
   it('capturando o alerta ao preencher input de soma de porcentagem', () => {
     cy.get('#porc3').type('abc')
+    cy.get('#calcularPorc2').click()
+
+    cy.on('window:alert', (str) => {
+      expect(str).to.equal('Por favor, insira apenas valores numéricos!')
+    })
+
+    cy.get('#porc4').type('abc')
     cy.get('#calcularPorc2').click()
 
     cy.on('window:alert', (str) => {
