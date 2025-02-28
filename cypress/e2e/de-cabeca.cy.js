@@ -62,6 +62,15 @@ describe('De Cabeça - Sua Calculadora Online', () => {
 
     cy.get('#outPorc3').should('be.visible').and('have.text', '90,00')
   })
+  
+  it('capturando o alerta ao preencher input de subtração de porcentagem', () => {
+    cy.get('#porc5').type('abc')
+    cy.get('#calcularPorc3').click()
+
+    cy.on('window:alert', (str) => {
+      expect(str).to.equal('Por favor, insira apenas valores numéricos!')
+    })
+  })
 
   it('preenchimento de formulários de Celsius para Fahrenheit', () => {
     cy.get('#celsius').type('-9.44', {delay: 0})
