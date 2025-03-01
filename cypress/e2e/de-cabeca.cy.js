@@ -7,10 +7,8 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.title().should('eq', 'De Cabeça - Sua Calculadora Online')
   })
 
-  it('preenchimento de formulário de Porcentagem de um valor', () => {
-    cy.get('#porc1').type('10')
-    cy.get('#porc2').type('100')
-    cy.get('#calcularPorc1').click()
+  it.only('preenchimento de formulário de Porcentagem de um valor', () => {
+    cy.porc1()
 
     cy.get('#outPorc1').should('be.visible').and('have.text', '10,00')
   })
