@@ -18,3 +18,8 @@ Cypress.Commands.add('erroPorc1e2', () => {
       expect(str).to.equal('Por favor, insira apenas valores numéricos!')
     })
 })
+Cypress.Commands.add('erroGeometria', () => {
+  cy.get('#raio').type('abc')
+  cy.get('#unidade').select('cm')
+  cy.get('#calcularRaio').click()  
+})

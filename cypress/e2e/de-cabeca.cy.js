@@ -13,7 +13,7 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.get('#outPorc1').should('be.visible').and('have.text', '10,00')
   })
 
-  it.only('capturando o alerta ao preencher input de porcentagem', () => {
+  it('capturando o alerta ao preencher input de porcentagem', () => {
     cy.erroPorc1e2()    
   })
 
@@ -83,6 +83,14 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.get('#outResultado3').should('be.visible').and('have.text', '7853,75')
     cy.get('#outResultado4').should('be.visible').and('have.text', '31415,00')
     cy.get('#outResultado5').should('be.visible').and('have.text', '523583,33')
+  })
+
+  it('teste de erro de inserção de caracteres inválidos', () => {
+    cy.erroGeometria()
+
+    cy.on('window:alert', (str) => {
+      expect(str).to.equal('Por favor, insira apenas valores numéricos positivos!')
+    })
   })
 
   it('preenchimento de formulários de Celsius para Fahrenheit', () => {
