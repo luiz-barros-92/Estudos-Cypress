@@ -17,10 +17,8 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.erroPorc1e2()    
   })
 
-  it('preenchimento de formulário de somar porcentagem a um valor', () => {
-    cy.get('#porc3').type('100')
-    cy.get('#porc4').type('10')
-    cy.get('#calcularPorc2').click()
+  it.only('preenchimento de formulário de somar porcentagem a um valor', () => {
+    cy.somaPorc()
 
     cy.get('#outPorc2').should('be.visible').and('have.text', '110,00')
   })
