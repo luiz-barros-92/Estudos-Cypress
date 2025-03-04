@@ -23,24 +23,12 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.erroPorc3e4()
   })
 
-  it.only('preenchimento de formulário de subtrair porcentagem a um valor', () => {
+  it('preenchimento de formulário de subtrair porcentagem a um valor', () => {
     cy.subtraiPorc()
   })
   
-  it('capturando o alerta ao preencher input de subtração de porcentagem', () => {
-    cy.get('#porc5').type('abc')
-    cy.get('#calcularPorc3').click()
-
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('Por favor, insira apenas valores numéricos!')
-    })
-
-    cy.get('#porc6').type('abc')
-    cy.get('#calcularPorc3').click()
-
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('Por favor, insira apenas valores numéricos!')
-    })
+  it.only('capturando o alerta ao preencher input de subtração de porcentagem', () => {
+    cy.erroPorc5e6()
   })
 
   it('preenchimento de formulario de calculadora de raio', () => {

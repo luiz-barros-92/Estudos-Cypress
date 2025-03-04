@@ -54,6 +54,22 @@ Cypress.Commands.add('subtraiPorc', () => {
   cy.get('#outPorc3').should('be.visible').and('have.text', '90,00')
 })
 
+Cypress.Commands.add('erroPorc5e6', () => {
+  cy.get('#porc5').type('abc')
+  cy.get('#calcularPorc3').click()
+
+  cy.on('window:alert', (str) => {
+    expect(str).to.equal('Por favor, insira apenas valores numéricos!')
+  })
+
+  cy.get('#porc6').type('abc')
+  cy.get('#calcularPorc3').click()
+
+  cy.on('window:alert', (str) => {
+    expect(str).to.equal('Por favor, insira apenas valores numéricos!')
+  })
+})
+
 Cypress.Commands.add('erroGeometria', () => {
   cy.get('#raio').type('abc')
   cy.get('#unidade').select('cm')
