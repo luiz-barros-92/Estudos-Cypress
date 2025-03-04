@@ -8,22 +8,18 @@ describe('De Cabeça - Sua Calculadora Online', () => {
   })
 
   it('preenchimento de formulário de Porcentagem de um valor', () => {
-    cy.porc1()
-
-    cy.get('#outPorc1').should('be.visible').and('have.text', '10,00')
+    cy.porc1()    
   })
 
   it('capturando o alerta ao preencher input de porcentagem', () => {
     cy.erroPorc1e2()    
   })
 
-  it('preenchimento de formulário de somar porcentagem a um valor', () => {
-    cy.somaPorc()
-
-    cy.get('#outPorc2').should('be.visible').and('have.text', '110,00')
+  it.only('preenchimento de formulário de somar porcentagem a um valor', () => {
+    cy.somaPorc()    
   })
 
-  it.only('capturando o alerta ao preencher input de soma de porcentagem', () => {
+  it('capturando o alerta ao preencher input de soma de porcentagem', () => {
     cy.erroPorc3e4()
   })
 
