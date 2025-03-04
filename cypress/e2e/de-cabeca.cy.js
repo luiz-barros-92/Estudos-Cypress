@@ -15,7 +15,7 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.erroPorc1e2()    
   })
 
-  it.only('preenchimento de formulário de somar porcentagem a um valor', () => {
+  it('preenchimento de formulário de somar porcentagem a um valor', () => {
     cy.somaPorc()    
   })
 
@@ -23,12 +23,8 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.erroPorc3e4()
   })
 
-  it('preenchimento de formulário de subtrair porcentagem a um valor', () => {
-    cy.get('#porc5').type('100')
-    cy.get('#porc6').type('10')
-    cy.get('#calcularPorc3').click()
-
-    cy.get('#outPorc3').should('be.visible').and('have.text', '90,00')
+  it.only('preenchimento de formulário de subtrair porcentagem a um valor', () => {
+    cy.subtraiPorc()
   })
   
   it('capturando o alerta ao preencher input de subtração de porcentagem', () => {

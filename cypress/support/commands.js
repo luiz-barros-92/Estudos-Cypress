@@ -46,6 +46,14 @@ Cypress.Commands.add('erroPorc3e4', () => {
   })
 })
 
+Cypress.Commands.add('subtraiPorc', () => {
+  cy.get('#porc5').type('100')
+  cy.get('#porc6').type('10')
+  cy.get('#calcularPorc3').click()
+
+  cy.get('#outPorc3').should('be.visible').and('have.text', '90,00')
+})
+
 Cypress.Commands.add('erroGeometria', () => {
   cy.get('#raio').type('abc')
   cy.get('#unidade').select('cm')
