@@ -27,36 +27,16 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.subtraiPorc()
   })
   
-  it.only('capturando o alerta ao preencher input de subtração de porcentagem', () => {
+  it('capturando o alerta ao preencher input de subtração de porcentagem', () => {
     cy.erroPorc5e6()
   })
 
   it('preenchimento de formulario de calculadora de raio', () => {
-    cy.get('#raio').type('50')
-    cy.get('#unidade').select('m')
-    cy.get('#calcularRaio').click()
-    
-    cy.get('#outUnidade1, #outUnidade2').each(($element) => {
-      cy.wrap($element).should('be.visible').and('have.text', 'm')
-    })
-    cy.get('#outUnidade3, #outUnidade4').each(($element) => {
-      cy.wrap($element).should('be.visible').and('have.text', 'm²')
-    })
-    cy.get('#outUnidade5').should('be.visible').and('have.text', 'm³')
-
-    cy.get('#outResultado1').should('be.visible').and('have.text', '100,00')
-    cy.get('#outResultado2').should('be.visible').and('have.text', '314,15')
-    cy.get('#outResultado3').should('be.visible').and('have.text', '7853,75')
-    cy.get('#outResultado4').should('be.visible').and('have.text', '31415,00')
-    cy.get('#outResultado5').should('be.visible').and('have.text', '523583,33')
+    cy.geometriaRaio()
   })
 
   it('teste de erro de inserção de caracteres inválidos', () => {
-    cy.erroGeometria()
-
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('Por favor, insira apenas valores numéricos positivos!')
-    })
+    cy.erroGeometriaRaio()    
   })
 
   it('preenchimento de formulários de Celsius para Fahrenheit', () => {
