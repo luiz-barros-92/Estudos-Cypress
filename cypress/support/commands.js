@@ -99,3 +99,10 @@ Cypress.Commands.add('erroGeometriaRaio', () => {
     expect(str).to.equal('Por favor, insira apenas valores numéricos positivos!')
   })
 })
+
+Cypress.Commands.add('celsiusPara' , () => {
+  cy.get('#celsius').type('-9.44', {delay: 0})
+  cy.get('#celsiusPara').click()
+
+  cy.get('#fahren').should('be.visible').and('have.text', '15,01 °F')
+})

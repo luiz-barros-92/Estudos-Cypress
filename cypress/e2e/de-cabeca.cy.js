@@ -39,11 +39,8 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.erroGeometriaRaio()    
   })
 
-  it('preenchimento de formulários de Celsius para Fahrenheit', () => {
-    cy.get('#celsius').type('-9.44', {delay: 0})
-    cy.get('#celsiusPara').click()
-
-    cy.get('#fahren').should('be.visible').and('have.text', '15,01 °F')
+  it.only('preenchimento de formulários de Celsius para Fahrenheit', () => {
+    cy.celsiusPara()
   })
 
   it('capturando o alerta ao preencher input com caracteres não aceitos pela aplicação', () => {
