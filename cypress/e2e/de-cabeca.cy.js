@@ -39,17 +39,12 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.erroGeometriaRaio()    
   })
 
-  it.only('preenchimento de formulários de Celsius para Fahrenheit', () => {
+  it('preenchimento de formulários de Celsius para Fahrenheit', () => {
     cy.celsiusPara()
   })
 
-  it('capturando o alerta ao preencher input com caracteres não aceitos pela aplicação', () => {
-    cy.get('#celsius').type('abc')
-    cy.get('#celsiusPara').click()
-
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('Por favor, insira apenas valores numéricos!')
-    })
+  it.only('capturando o alerta ao preencher input com caracteres não aceitos pela aplicação', () => {
+    cy.erroCelsiusPara()
   })
 
   it('preenchimento de formulários de Fahrenheit para Celsius', () => {
