@@ -43,24 +43,15 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.celsiusPara()
   })
 
-  it.only('capturando o alerta ao preencher input com caracteres não aceitos pela aplicação', () => {
+  it('capturando o alerta ao preencher input com caracteres não aceitos pela aplicação', () => {
     cy.erroCelsiusPara()
   })
 
   it('preenchimento de formulários de Fahrenheit para Celsius', () => {
-    cy.get('#fahrenInput').type('15')
-    cy.get('#fahrenPara').click()
-
-    cy.get('#celsiusOutput').should('be.visible').and('have.text', '-9,44 °C')
+    cy.fahrenPara()
   })
 
   it('capturando o alerta ao preencher input com caracteres de Fahrenheit não aceitos pela aplicação', () => {
-    cy.get('#fahrenInput').type('abc')
-    cy.get('#fahrenPara').click()
-  
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('Por favor, insira apenas valores numéricos!')
-    })
+    cy.errofahrenPara()
   })
 })
-

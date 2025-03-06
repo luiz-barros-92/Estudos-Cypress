@@ -115,3 +115,19 @@ Cypress.Commands.add('erroCelsiusPara', () => {
     expect(str).to.equal('Por favor, insira apenas valores numéricos!')
   })
 })
+
+Cypress.Commands.add('fahrenPara', () => {
+  cy.get('#fahrenInput').type('15')
+  cy.get('#fahrenPara').click()
+
+  cy.get('#celsiusOutput').should('be.visible').and('have.text', '-9,44 °C')
+})
+
+Cypress.Commands.add('errofahrenPara', () => {
+  cy.get('#fahrenInput').type('abc')
+  cy.get('#fahrenPara').click()
+
+  cy.on('window:alert', (str) => {
+    expect(str).to.equal('Por favor, insira apenas valores numéricos!')
+  })
+})
