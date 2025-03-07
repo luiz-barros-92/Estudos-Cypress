@@ -43,6 +43,10 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.regra3Simp()
   })
 
+  it('teste de erro nos campos de regra de 3 simples', () => {
+    cy.erroRegra3Simp()
+  })
+
   it('preenchimento de formulários de Celsius para Fahrenheit', () => {
     cy.celsiusPara()
   })

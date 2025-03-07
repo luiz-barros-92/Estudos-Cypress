@@ -109,6 +109,17 @@ Cypress.Commands.add('regra3Simp', () => {
   cy.get('#out3Simp').should('be.visible').and('have.text', '160,00')
 })
 
+Cypress.Commands.add('erroRegra3Simp', () => {
+  cy.get('#a3').type('abc')
+  cy.get('#b3').type('50')  
+  cy.get('#c3').type('80')
+  cy.get('#regra3Simp').click()
+  
+  cy.on('window:alert', (str) => {
+    expect(str).to.equal('Por favor, insira apenas valores numéricos!')
+  })
+})
+
 Cypress.Commands.add('celsiusPara' , () => {
   cy.get('#celsius').type('-9.44', {delay: 0})
   cy.get('#celsiusPara').click()
