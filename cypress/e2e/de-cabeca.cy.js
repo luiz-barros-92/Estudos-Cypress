@@ -39,6 +39,10 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.erroGeometriaRaio()    
   })
 
+  it('testando happy path na calculadora de regra de 3 simples', () => {
+    cy.regra3Simp()
+  })
+
   it('preenchimento de formulários de Celsius para Fahrenheit', () => {
     cy.celsiusPara()
   })
