@@ -27,7 +27,7 @@ describe('De Cabeça - Sua Calculadora Online', () => {
     cy.subtraiPorc()
   })
   
-  it('capturando o alerta ao preencher input de subtração de porcentagem', () => {
+  it('capturando o alerta ao preencher apenas um campo de input de subtração de porcentagem, deixando o outro vazio', () => {
     cy.erroPorc5e6()
   })
 
