@@ -144,3 +144,11 @@ Cypress.Commands.add('errofahrenPara', () => {
     expect(str).to.equal('Por favor, insira apenas valores numéricos!')
   })
 })
+
+Cypress.Commands.add('inputVazio', () => {
+  cy.get('#calcularPorc1').click()
+
+  cy.on('window:alert', (str) => {
+    expect(str).to.equal('Por favor, insira apenas valores numéricos!')
+  })
+})

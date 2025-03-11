@@ -62,4 +62,8 @@ describe('De Cabeça - Sua Calculadora Online', () => {
   it('capturando o alerta ao preencher input com caracteres de Fahrenheit não aceitos pela aplicação', () => {
     cy.errofahrenPara()
   })
+
+  it('capturando alerta ao clicar em um botão com input vazio', () => {
+    cy.inputVazio()
+  })
 })
